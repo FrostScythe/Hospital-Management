@@ -1,11 +1,10 @@
 package com.simple.hospital_management.model;
 
-public class Doctor {
-    // encapulation concept is used below
+public class Patient {
     private int id;
     private String name;
     private String email;
-    private String specialization;
+    private String disease;
     private String gender;
 
     public int getId() {
@@ -32,12 +31,12 @@ public class Doctor {
         this.email = email;
     }
 
-    public String getSpecialization() {
-        return specialization;
+    public String getDisease() {
+        return disease;
     }
 
-    public void setSpecialization(String specialization) {
-        this.specialization = specialization;
+    public void setDisease(String disease) {
+        this.disease = disease;
     }
 
     public String getGender() {
