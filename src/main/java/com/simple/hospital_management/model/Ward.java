@@ -46,4 +46,15 @@ public class Ward {
     public void setEmptyBed(int emptyBed) {
         this.emptyBed = emptyBed;
     }
+
+    @Override
+    public String toString() {
+        return "Ward{" +
+                "id=" + id +
+                ", type='" + type + '\'' +
+                ", totalBed=" + totalBed +
+                ", occupiedBed=" + occupiedBed +
+                ", emptyBed=" + emptyBed +
+                '}';
+    }
 }

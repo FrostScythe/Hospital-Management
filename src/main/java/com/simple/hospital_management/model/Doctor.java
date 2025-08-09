@@ -47,4 +47,15 @@ public class Doctor {
     public void setGender(String gender) {
         this.gender = gender;
     }
+
+    @Override
+    public String toString() {
+        return "Doctor{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", specialization='" + specialization + '\'' +
+                ", gender='" + gender + '\'' +
+                '}';
+    }
 }

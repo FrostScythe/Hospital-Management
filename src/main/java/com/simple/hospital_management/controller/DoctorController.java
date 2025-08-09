@@ -2,6 +2,7 @@ package com.simple.hospital_management.controller;
 
 import com.simple.hospital_management.model.Doctor;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -16,8 +17,12 @@ public class DoctorController {
 
     Map<Integer, Doctor> doctorMapDb = new HashMap<>();
 
+    // debugging - tracing the flow of application (understanding line by line what is happening )
+    //@RequestBody only work with complete class object input
+
     @PostMapping("/save")
-    public String saveDoctor(Doctor doctor){
+    public String saveDoctor( @RequestBody Doctor doctor){
+
         doctorMapDb.put(doctor.getId(), doctor);
         System.out.println("doctor saved: "+doctorMapDb);
         return "Doctor saved successfully!";
