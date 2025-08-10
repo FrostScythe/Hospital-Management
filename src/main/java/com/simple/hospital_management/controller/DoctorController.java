@@ -1,10 +1,7 @@
 package com.simple.hospital_management.controller;
 
 import com.simple.hospital_management.model.Doctor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -26,5 +23,12 @@ public class DoctorController {
         doctorMapDb.put(doctor.getId(), doctor);
         System.out.println("doctor saved: "+doctorMapDb);
         return "Doctor saved successfully!";
+    }
+
+    //@PathVariable - it takes the input in the url path and endpoint
+
+    @GetMapping("/find/{id}")
+    public Doctor getDoctorById(@PathVariable int id){
+        return doctorMapDb.get(id);
     }
 }

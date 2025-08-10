@@ -1,6 +1,5 @@
 package com.simple.hospital_management.controller;
 
-import com.simple.hospital_management.model.Doctor;
 import com.simple.hospital_management.model.Ward;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,9 +14,6 @@ import java.util.Map;
 public class WardController {
 
     Map<Integer, Ward> wardMapDb = new HashMap<>();
-
-    // debugging - tracing the flow of application (understanding line by line what is happening )
-    //@RequestBody only work with complete class object input
 
     @PostMapping("/save")
     public String saveWard( @RequestBody Ward ward){

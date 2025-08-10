@@ -15,9 +15,6 @@ public class PatientController {
 
     Map<Integer, Patient> patientMapDb = new HashMap<>();
 
-    // debugging - tracing the flow of application (understanding line by line what is happening )
-    //@RequestBody only work with complete class object input
-
     @PostMapping("/save")
     public String savePatient( @RequestBody Patient patient){
 
