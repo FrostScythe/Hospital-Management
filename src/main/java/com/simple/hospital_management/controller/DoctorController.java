@@ -31,4 +31,15 @@ public class DoctorController {
     public Doctor getDoctorById(@PathVariable int id){
         return doctorMapDb.get(id);
     }
+
+    @GetMapping("/findAll")
+    public Map<Integer, Doctor> getAllDoctors(){
+        return doctorMapDb;
+    }
+
+    @DeleteMapping("/find/{id}")
+    public String deleteDoctorById(@PathVariable int id){
+        doctorMapDb.remove(id);
+        return " Doctor removed successfully";
+    }
 }
