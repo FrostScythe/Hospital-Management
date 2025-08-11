@@ -1,10 +1,8 @@
 package com.simple.hospital_management.controller;
 
+import com.simple.hospital_management.model.Doctor;
 import com.simple.hospital_management.model.Ward;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -21,5 +19,21 @@ public class WardController {
         wardMapDb.put(ward.getId(), ward);
         System.out.println("ward saved: "+wardMapDb);
         return "Ward saved successfully!";
+    }
+
+    @GetMapping("/find/{id}")
+    public Ward getWardById(@PathVariable int id){
+        return wardMapDb.get(id);
+    }
+
+    @GetMapping("/findAll")
+    public Map<Integer, Ward> getAllWards(){
+        return wardMapDb;
+    }
+
+    @DeleteMapping("/find/{id}")
+    public String deleteWardById(@PathVariable int id){
+        wardMapDb.remove(id);
+        return " Ward removed successfully";
     }
 }
