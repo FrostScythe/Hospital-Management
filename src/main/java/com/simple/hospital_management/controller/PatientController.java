@@ -1,6 +1,5 @@
 package com.simple.hospital_management.controller;
 
-import com.simple.hospital_management.model.Doctor;
 import com.simple.hospital_management.model.Patient;
 import org.springframework.web.bind.annotation.*;
 
